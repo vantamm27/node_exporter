@@ -6,7 +6,7 @@ wget  https://github.com/prometheus/node_exporter/releases/download/v$VERSION/no
 
 tar xvf node_exporter-$VERSION.linux-amd64.tar.gz
 
-sudo cp node_exporter-0.15.1.linux-amd64/node_exporter /usr/local/bin
+cp node_exporter-$VERSION.linux-amd64/node_exporter /usr/local/bin
 
 exists=$(grep -c "^node_exporter:" /etc/passwd) && echo $exists
 
@@ -18,18 +18,18 @@ fi
 
 sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 
-rm -rf node_exporter-0.15.1.linux-amd64.tar.gz node_exporter-0.15.1.linux-amd64
+rm -rf node_exporter-$VERSION.linux-amd64.tar.gz node_exporter-$VERSION.linux-amd64
 
 
-sudo nano /etc/systemd/system/node_exporter.service
+nano /etc/systemd/system/node_exporter.service
 
 wget -O /etc/systemd/system/node_exporter.service   https://raw.githubusercontent.com/vantamm27/node_exporter/master/node_exporter.service
 
 
-sudo systemctl daemon-reload
-sudo systemctl enable node_exporter
-sudo systemctl start node_exporter
-sudo systemctl status node_exporter
+systemctl daemon-reload
+systemctl enable node_exporter
+systemctl start node_exporter
+systemctl status node_exporter
 
 mkdir -p /opt/iot/node_exporter
 
