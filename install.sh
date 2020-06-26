@@ -14,13 +14,7 @@ if [ $exists -eq 0 ]; then
     useradd -m -s /bin/bash node_exporter
 
 fi 
-
-
-
 rm -rf node_exporter-$VERSION.linux-amd64.tar.gz node_exporter-$VERSION.linux-amd64
-
-
-nano /etc/systemd/system/node_exporter.service
 
 wget -O /etc/systemd/system/node_exporter.service   https://raw.githubusercontent.com/vantamm27/node_exporter/master/node_exporter.service
 
