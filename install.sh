@@ -26,7 +26,7 @@ wget -O /etc/systemd/system/node_exporter.service   https://raw.githubuserconten
 systemctl daemon-reload
 systemctl enable node_exporter
 systemctl start node_exporter
-systemctl status node_exporter
+#systemctl status node_exporter
 
 mkdir -p /opt/iot/node_exporter
 
