@@ -1,6 +1,5 @@
 #! /bin/bash
-
-VERSION=0.15.1
+VERSION=0.18.1
 
 wget  https://github.com/prometheus/node_exporter/releases/download/v$VERSION/node_exporter-$VERSION.linux-amd64.tar.gz
 
