@@ -28,7 +28,7 @@ mkdir -p /opt/iot/node_exporter
 echo '#!/bin/bash' > /opt/iot/node_exporter/node_exporter.sh
 echo "PUSHGATEWAY_SERVER=$ENDPOINT" >>  /opt/iot/node_exporter/node_exporter.sh
 echo "NODE_NAME=$HOSTNAME" >> /opt/iot/node_exporter/node_exporter.sh 
-echo "curl -s localhost:9100/metrics | curl --data-binary @- \$PUSHGATEWAY_SERVER/metrics/job/node-exporter/instance/\$NODE_NAME " >>  /opt/iot/node_exporter/node_exporter.sh 
+echo "curl -s localhost:9100/metrics | curl --data-binary @- \$PUSHGATEWAY_SERVER/metrics/job/\$INSTANCE/instance/\$NODE_NAME " >>  /opt/iot/node_exporter/node_exporter.sh 
 
 chmod +x /opt/iot/node_exporter/node_exporter.sh
 
